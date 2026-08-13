@@ -1,0 +1,2 @@
+import type { IndexState } from '../../shared/types';
+export function StatusBar({ state }: { state: IndexState }) { return <footer className="status-bar"><span className={`status-dot ${state.status}`} /> <strong>{state.status}</strong><span>Documents: {state.documentCount}</span><span>Chunks: {state.chunkCount}</span><span className="last-activity">{state.lastActivity ? `Last activity ${new Date(state.lastActivity).toLocaleTimeString()}` : 'No activity yet'}</span></footer>; }

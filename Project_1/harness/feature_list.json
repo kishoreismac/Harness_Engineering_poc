@@ -7,32 +7,32 @@
       "name": "Window Launch",
       "description": "Electron app opens a BrowserWindow with correct dimensions and preload script",
       "status": "pass",
-      "evidence": "npm run dev launches window at 1200x800 with contextIsolation=true and nodeIntegration=false",
-      "testedAt": "2026-03-30T10:00:00Z"
+      "evidence": "Verified 2026-08-13: npm run dev completed check/build and Electron remained running until intentionally terminated; BrowserWindow is configured at 1200x800 with contextIsolation=true, nodeIntegration=false, and the typed preload script.",
+      "testedAt": "2026-08-13T11:51:00Z"
     },
     {
       "id": "document-list",
       "name": "Document List Panel",
       "description": "Left sidebar shows imported documents with empty state message",
       "status": "pass",
-      "evidence": "DocumentList component renders empty state when no documents, shows document cards when data present",
-      "testedAt": "2026-03-30T10:05:00Z"
+      "evidence": "DocumentList renders the empty-library guidance and imported document cards with filename type, size, indexing status, selection, detail display, and delete controls; npm run check and production build pass.",
+      "testedAt": "2026-08-13T11:51:00Z"
     },
     {
       "id": "question-panel",
       "name": "Question Panel",
       "description": "Bottom input bar accepts questions and submits via IPC",
       "status": "pass",
-      "evidence": "QuestionPanel renders text input and Ask button, submits to window.knowledgeBase.qa.ask on Enter or click",
-      "testedAt": "2026-03-30T10:08:00Z"
+      "evidence": "QuestionPanel submits through window.knowledgeBase.qa.ask on Enter or click; QaService test verifies grounded 0.85-confidence response, citation, and persisted history.",
+      "testedAt": "2026-08-13T11:51:00Z"
     },
     {
       "id": "data-directory",
       "name": "Data Directory",
       "description": "PersistenceService creates and manages userData/knowledge-base-data directory",
       "status": "pass",
-      "evidence": "PersistenceService constructor calls ensureDirectories() creating data, documents, and index subdirectories",
-      "testedAt": "2026-03-30T10:10:00Z"
+      "evidence": "PersistenceService constructor initializes knowledge-base-data with content, chunks, and index subdirectories; service tests create, use, and clean an isolated data directory successfully.",
+      "testedAt": "2026-08-13T11:51:00Z"
     }
   ]
 }
