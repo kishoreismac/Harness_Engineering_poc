@@ -1,12 +1,16 @@
 {
   "name": "baseline",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron .",
+    "test": "node --check main.js && node --check renderer.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "A focused desktop workspace for reading documents and asking questions.",
+  "devDependencies": {
+    "electron": "^38.0.0"
+  }
 }

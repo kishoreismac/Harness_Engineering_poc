@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clarity — Document workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">C</span><span>Clarity</span></div>
+    <button class="add-btn" id="addBtn"><span>＋</span> Add document</button>
+    <div class="section-label">Workspace</div>
+    <nav>
+      <button class="nav-item active"><span>▱</span> Library <b id="docCount">4</b></button>
+      <button class="nav-item"><span>☆</span> Favorites</button>
+      <button class="nav-item"><span>◷</span> Recent</button>
+    </nav>
+    <div class="section-label library-label">Your documents</div>
+    <div id="documentList" class="document-list"></div>
+    <div class="profile"><div class="avatar">AK</div><div><strong>Alex Kim</strong><small>Personal workspace</small></div><button>•••</button></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="crumb"><span>Library</span><i>/</i><strong id="crumbTitle">Remote Work Playbook</strong></div>
+      <div class="top-actions"><button title="Favorite">☆</button><button title="More">•••</button><label class="search"><span>⌕</span><input id="searchInput" placeholder="Search in document"/><kbd>⌘ K</kbd></label></div>
+    </header>
+    <div class="workspace">
+      <section class="viewer">
+        <div class="paper-toolbar"><span id="pageInfo">12 pages</span><div><button id="minus">−</button><span id="zoom">100%</span><button id="plus">＋</button><i></i><button id="prev">‹</button><span id="pageNumber">1 / 12</span><button id="next">›</button></div></div>
+        <article class="paper" id="paper"></article>
+      </section>
+      <section class="assistant">
+        <div class="assistant-head"><div><span class="spark">✦</span><div><strong>Ask Clarity</strong><small>Answers grounded in this document</small></div></div><button id="clearChat">↻</button></div>
+        <div class="chat" id="chat">
+          <div class="welcome"><div class="orb">✦</div><h2>What would you like to know?</h2><p>Ask anything about this document. I’ll find the answer and point you to the source.</p></div>
+          <div class="suggestions" id="suggestions">
+            <button>Summarize this document</button>
+            <button>What are the key recommendations?</button>
+            <button>List the main action items</button>
+          </div>
+        </div>
+        <form class="ask-box" id="askForm"><textarea id="question" rows="1" placeholder="Ask about this document…"></textarea><div><span>Clarity can make mistakes. Check sources.</span><button id="sendBtn" disabled>↑</button></div></form>
+      </section>
+    </div>
+  </main>
+  <div class="toast" id="toast">Document added to your library</div>
+  <script src="renderer.js"></script>
+</body>
+</html>
